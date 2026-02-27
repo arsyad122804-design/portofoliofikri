@@ -1,0 +1,22 @@
+{
+  "name": "portfolio-2025",
+  "version": "1.0.0",
+  "description": "Portfolio website dengan desain modern - tema merah bercahaya dan hitam",
+  "main": "index.html",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html",
+    "start": "npm run dev"
+  },
+  "keywords": [
+    "portfolio",
+    "website",
+    "html",
+    "css",
+    "javascript"
+  ],
+  "author": "Yudha Pradana",
+  "license": "MIT",
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
