@@ -141,3 +141,71 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+// Visitor Counter
+function updateVisitorCount() {
+    try {
+        // Get current count from localStorage
+        let visitorCount = localStorage.getItem('visitorCount');
+        
+        // Check if this is a new session
+        let lastVisit = sessionStorage.getItem('visited');
+        
+        if (!lastVisit) {
+            // New session - increment counter
+            if (visitorCount) {
+                visitorCount = parseInt(visitorCount) + 1;
+            } else {
+                visitorCount = 1;
+            }
+            
+            // Save to localStorage
+            localStorage.setItem('visitorCount', visitorCount);
+            
+            // Mark this session as visited
+            sessionStorage.setItem('visited', 'true');
+        } else {
+            // Returning in same session - just get the count
+            visitorCount = localStorage.getItem('visitorCount') || 1;
+        }
+        
+        // Display the count with animation
+        const counterElement = document.getElementById('visitorCount');
+        if (counterElement) {
+            animateCounter(counterElement, 0, parseInt(visitorCount), 1000);
+        }
+    } catch (error) {
+        console.log('Visitor counter error:', error);
+        // Fallback - just show 1
+        const counterElement = document.getElementById('visitorCount');
+        if (counterElement) {
+            counterElement.textContent = '1';
+        }
+    }
+}
+
+// Animate counter
+function animateCounter(element, start, end, duration) {
+    if (!element) return;
+    
+    let startTime = null;
+    
+    function animation(currentTime) {
+        if (!startTime) startTime = currentTime;
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+        const value = Math.floor(progress * (end - start) + start);
+        element.textContent = value;
+        
+        if (progress < 1) {
+            requestAnimationFrame(animation);
+        }
+    }
+    
+    requestAnimationFrame(animation);
+}
+
+// Initialize visitor counter on page load
+window.addEventListener('DOMContentLoaded', () => {
+    updateVisitorCount();
+});
