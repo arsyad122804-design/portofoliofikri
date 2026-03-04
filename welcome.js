@@ -91,7 +91,7 @@ document.getElementById('guestForm').addEventListener('submit', function(e) {
             btn.style.background = 'linear-gradient(135deg, #34a853, #0f9d58)';
             
             setTimeout(() => {
-                window.location.href = 'index.html';
+                window.location.href = 'portfolio.html';
             }, 1000);
         }
     } else if (userType === 'developer') {
