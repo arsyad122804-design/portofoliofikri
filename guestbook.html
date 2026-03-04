@@ -12,6 +12,47 @@
             padding: 20px;
         }
         
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .action-btn {
+            padding: 12px 24px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .portfolio-btn {
+            background: linear-gradient(135deg, #00bcd4, #0097a7);
+            color: white;
+        }
+        
+        .portfolio-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(0, 188, 212, 0.6);
+        }
+        
+        .delete-btn {
+            background: linear-gradient(135deg, #dc143c, #ff1744);
+            color: white;
+        }
+        
+        .delete-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.6);
+        }
+        
         .guestbook-header {
             text-align: center;
             margin-bottom: 40px;
@@ -82,6 +123,39 @@
             box-shadow: 0 5px 20px rgba(220, 20, 60, 0.6);
         }
         
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #dc143c, #ff1744);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.6);
+        }
+        
+        .delete-guest-btn {
+            background: rgba(220, 20, 60, 0.2);
+            border: 1px solid rgba(220, 20, 60, 0.5);
+            color: #dc143c;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+        
+        .delete-guest-btn:hover {
+            background: rgba(220, 20, 60, 0.4);
+            transform: scale(1.05);
+        }
+        
         .stats {
             display: flex;
             justify-content: center;
@@ -113,7 +187,10 @@
 </head>
 <body>
     <div class="guestbook-container">
-        <a href="index.html" class="back-btn">← Kembali ke Portfolio</a>
+        <div class="header-actions">
+            <a href="index.html" class="action-btn portfolio-btn">🏠 Masuk Portfolio</a>
+            <button id="clearData" class="action-btn delete-btn">🗑️ Hapus Semua Data</button>
+        </div>
         
         <div class="guestbook-header">
             <h1>📖 Buku Tamu</h1>
@@ -152,7 +229,7 @@
             
             // Display guests (newest first)
             guestList.innerHTML = guests.reverse().map((guest, index) => `
-                <div class="guest-card">
+                <div class="guest-card" data-index="${guests.length - 1 - index}">
                     <div class="guest-info">
                         <div class="info-item">
                             <span class="info-label">Nama</span>
@@ -164,13 +241,14 @@
                         </div>
                         <div class="info-item">
                             <span class="info-label">Tujuan</span>
-                            <span class="info-value">${guest.purpose}</span>
+                            <span class="info-value">${guest.purpose || 'Mengunjungi Portfolio'}</span>
                         </div>
                         <div class="info-item">
                             <span class="info-label">Waktu Kunjungan</span>
                             <span class="info-value">${guest.visitDate}</span>
                         </div>
                     </div>
+                    <button class="delete-guest-btn" onclick="deleteGuest(${guests.length - 1 - index})">🗑️ Hapus</button>
                 </div>
             `).join('');
             
@@ -178,6 +256,32 @@
                 guestList.innerHTML = '<p style="text-align: center; color: #888;">Belum ada pengunjung</p>';
             }
         }
+        
+        // Delete single guest
+        function deleteGuest(index) {
+            if (confirm('Hapus data pengunjung ini?')) {
+                let guests = JSON.parse(localStorage.getItem('portfolioGuests') || '[]');
+                guests.splice(index, 1);
+                localStorage.setItem('portfolioGuests', JSON.stringify(guests));
+                
+                // Update visitor count
+                localStorage.setItem('visitorCount', guests.length);
+                
+                loadGuests();
+            }
+        }
+        
+        // Clear all data
+        document.getElementById('clearData').addEventListener('click', function() {
+            if (confirm('Hapus SEMUA data pengunjung? Tindakan ini tidak dapat dibatalkan!')) {
+                if (confirm('Anda yakin? Data akan hilang permanen!')) {
+                    localStorage.removeItem('portfolioGuests');
+                    localStorage.setItem('visitorCount', '0');
+                    loadGuests();
+                    alert('Semua data berhasil dihapus!');
+                }
+            }
+        });
         
         loadGuests();
     </script>

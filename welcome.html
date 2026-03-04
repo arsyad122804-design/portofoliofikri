@@ -16,24 +16,36 @@
             
             <form id="guestForm" class="guest-form">
                 <div class="form-group">
-                    <label for="guestName">Nama Lengkap *</label>
-                    <input type="text" id="guestName" name="name" placeholder="Masukkan nama Anda" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="guestCity">Asal Kota *</label>
-                    <input type="text" id="guestCity" name="city" placeholder="Contoh: Malang" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="guestPurpose">Tujuan Kunjungan (Opsional)</label>
-                    <select id="guestPurpose" name="purpose">
-                        <option value="">Pilih tujuan...</option>
-                        <option value="Melihat Portfolio">Melihat Portfolio</option>
-                        <option value="Mencari Inspirasi">Mencari Inspirasi</option>
-                        <option value="Kerjasama">Kerjasama</option>
-                        <option value="Lainnya">Lainnya</option>
+                    <label for="userType">Masuk Sebagai *</label>
+                    <select id="userType" name="userType" required>
+                        <option value="">Pilih...</option>
+                        <option value="tamu">Tamu</option>
+                        <option value="developer">Developer</option>
                     </select>
+                </div>
+
+                <div id="guestFields">
+                    <div class="form-group">
+                        <label for="guestName">Nama Lengkap *</label>
+                        <input type="text" id="guestName" name="name" placeholder="Masukkan nama Anda">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="guestCity">Asal Kota *</label>
+                        <input type="text" id="guestCity" name="city" placeholder="Contoh: Malang">
+                    </div>
+                </div>
+
+                <div id="developerFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="devName">Nama Developer *</label>
+                        <input type="text" id="devName" name="devName" placeholder="Masukkan nama Anda">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="devPassword">Password *</label>
+                        <input type="password" id="devPassword" name="password" placeholder="Password: 1-8">
+                    </div>
                 </div>
                 
                 <button type="submit" class="submit-btn">

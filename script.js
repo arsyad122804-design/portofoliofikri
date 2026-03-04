@@ -172,6 +172,18 @@ window.addEventListener('scroll', () => {
 // Visitor Counter
 function updateVisitorCount() {
     try {
+        // Check if user is developer
+        const isDeveloper = sessionStorage.getItem('isDeveloper');
+        if (isDeveloper === 'true') {
+            // Developer tidak dihitung sebagai visitor
+            const counterElement = document.getElementById('visitorCount');
+            if (counterElement) {
+                const count = localStorage.getItem('visitorCount') || 0;
+                counterElement.textContent = count;
+            }
+            return;
+        }
+        
         // Get current count from localStorage
         let visitorCount = localStorage.getItem('visitorCount');
         
