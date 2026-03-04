@@ -1,6 +1,5 @@
 // AI Assistant Chatbot
-// API key akan diambil dari environment variable di Vercel
-const GROQ_API_KEY = process.env.GROQ_API_KEY || '';
+const GROQ_API_KEY = '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';
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 // Portfolio data for AI context
