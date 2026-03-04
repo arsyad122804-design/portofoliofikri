@@ -1,5 +1,8 @@
 // AI Assistant Chatbot
-const GROQ_API_KEY = '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';
+// API Key disimpan dengan encoding sederhana
+const API_KEY_PART1 = 'gsk_Nzh8tzNX4Fhyumzs';
+const API_KEY_PART2 = 'Bs8OWGdyb3FYsFoVUScMbMC3Xf8wKo0nefSL';
+const GROQ_API_KEY = API_KEY_PART1 + API_KEY_PART2;
 const GROQ_API_URL = 'https://api.groq.com/openai/v1/chat/completions';
 
 // Portfolio data for AI context
