@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buku Tamu - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .guestbook-container {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        .guestbook-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .guestbook-header h1 {
+            font-size: 36px;
+            color: #dc143c;
+            text-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+            margin-bottom: 10px;
+        }
+        
+        .guest-list {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .guest-card {
+            background: rgba(20, 20, 20, 0.8);
+            border: 2px solid rgba(220, 20, 60, 0.3);
+            border-radius: 15px;
+            padding: 20px;
+            transition: all 0.3s;
+        }
+        
+        .guest-card:hover {
+            border-color: #dc143c;
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.4);
+            transform: translateY(-5px);
+        }
+        
+        .guest-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .info-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .info-label {
+            font-size: 12px;
+            color: #dc143c;
+            font-weight: 600;
+        }
+        
+        .info-value {
+            font-size: 16px;
+            color: #fff;
+        }
+        
+        .back-btn {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #dc143c, #ff1744);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+        
+        .back-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 20px rgba(220, 20, 60, 0.6);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .stat-card {
+            background: rgba(220, 20, 60, 0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid rgba(220, 20, 60, 0.3);
+        }
+        
+        .stat-number {
+            font-size: 32px;
+            font-weight: bold;
+            color: #dc143c;
+        }
+        
+        .stat-label {
+            font-size: 14px;
+            color: #ccc;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="guestbook-container">
+        <a href="index.html" class="back-btn">← Kembali ke Portfolio</a>
+        
+        <div class="guestbook-header">
+            <h1>📖 Buku Tamu</h1>
+            <p>Daftar pengunjung portfolio</p>
+        </div>
+        
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalGuests">0</div>
+                <div class="stat-label">Total Pengunjung</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="todayGuests">0</div>
+                <div class="stat-label">Hari Ini</div>
+            </div>
+        </div>
+        
+        <div id="guestList" class="guest-list"></div>
+    </div>
+    
+    <script>
+        function loadGuests() {
+            const guests = JSON.parse(localStorage.getItem('portfolioGuests') || '[]');
+            const guestList = document.getElementById('guestList');
+            
+            // Update stats
+            document.getElementById('totalGuests').textContent = guests.length;
+            
+            // Count today's guests
+            const today = new Date().toLocaleDateString('id-ID');
+            const todayGuests = guests.filter(g => {
+                const guestDate = new Date(g.timestamp).toLocaleDateString('id-ID');
+                return guestDate === today;
+            });
+            document.getElementById('todayGuests').textContent = todayGuests.length;
+            
+            // Display guests (newest first)
+            guestList.innerHTML = guests.reverse().map((guest, index) => `
+                <div class="guest-card">
+                    <div class="guest-info">
+                        <div class="info-item">
+                            <span class="info-label">Nama</span>
+                            <span class="info-value">${guest.name}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Asal</span>
+                            <span class="info-value">${guest.city}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Tujuan</span>
+                            <span class="info-value">${guest.purpose}</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Waktu Kunjungan</span>
+                            <span class="info-value">${guest.visitDate}</span>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            if (guests.length === 0) {
+                guestList.innerHTML = '<p style="text-align: center; color: #888;">Belum ada pengunjung</p>';
+            }
+        }
+        
+        loadGuests();
+    </script>
+</body>
+</html>

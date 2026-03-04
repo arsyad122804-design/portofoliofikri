@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Portfolio</title>
+    <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="welcome-card">
+            <div class="welcome-header">
+                <h1>🌙 Assalamualaikum 🌙</h1>
+                <p>Selamat datang di Portfolio Muhammad Fikri Arsyad</p>
+            </div>
+            
+            <form id="guestForm" class="guest-form">
+                <div class="form-group">
+                    <label for="guestName">Nama Lengkap *</label>
+                    <input type="text" id="guestName" name="name" placeholder="Masukkan nama Anda" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestCity">Asal Kota *</label>
+                    <input type="text" id="guestCity" name="city" placeholder="Contoh: Malang" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="guestPurpose">Tujuan Kunjungan (Opsional)</label>
+                    <select id="guestPurpose" name="purpose">
+                        <option value="">Pilih tujuan...</option>
+                        <option value="Melihat Portfolio">Melihat Portfolio</option>
+                        <option value="Mencari Inspirasi">Mencari Inspirasi</option>
+                        <option value="Kerjasama">Kerjasama</option>
+                        <option value="Lainnya">Lainnya</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-btn">
+                    <span>Masuk Portfolio</span>
+                    <span class="arrow">→</span>
+                </button>
+            </form>
+            
+            <div class="visitor-info">
+                <p>📊 Total Pengunjung: <span id="totalVisitors">0</span></p>
+            </div>
+        </div>
+        
+        <div class="decoration-welcome">
+            <div class="moon-welcome">🌙</div>
+            <div class="star-welcome">⭐</div>
+            <div class="star-welcome">⭐</div>
+            <div class="lantern-welcome">🏮</div>
+        </div>
+    </div>
+    
+    <script src="welcome.js"></script>
+</body>
+</html>
