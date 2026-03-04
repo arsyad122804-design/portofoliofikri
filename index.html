@@ -299,13 +299,48 @@
         </div>
     </section>
 
-    <audio id="bgMusic" loop>
-        <source src="music/DJ TOMORROW TONIGHT X THE BOX VIRAL TIKTOK🎶 [cS4YHOI4gNI].mp3" type="audio/mpeg">
+    <audio id="bgMusic">
+        <source src="music/Maher Zain & Harris J - Qalbi Fil Madinah  Official Music Video  قلبي في المدينة - Awakening Music.mp3" type="audio/mpeg">
     </audio>
 
     <button id="musicToggle" class="music-toggle">
         <span class="music-icon">🔊</span>
     </button>
+
+    <button id="chatToggle" class="chat-toggle">
+        <span class="chat-icon">💬</span>
+    </button>
+
+    <div id="chatContainer" class="chat-container">
+        <div class="chat-header">
+            <div class="chat-header-info">
+                <span class="chat-avatar">🤖</span>
+                <div>
+                    <div class="chat-title">AI Assistant</div>
+                    <div class="chat-status">Online</div>
+                </div>
+            </div>
+            <button id="chatClose" class="chat-close">✕</button>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input-container">
+            <textarea id="chatInput" class="chat-input" placeholder="Tanya tentang Fikri..." rows="1"></textarea>
+            <button id="chatSend" class="chat-send">
+                <span>➤</span>
+            </button>
+        </div>
+    </div>
+
+    <div class="ramadan-decoration">🌙✨</div>
+    <div class="ramadan-greeting">☪️ Ramadan Mubarak ☪️</div>
+    
+    <div class="stars-container">
+        <div class="star">⭐</div>
+        <div class="star">⭐</div>
+        <div class="star">⭐</div>
+        <div class="star">⭐</div>
+        <div class="star">⭐</div>
+    </div>
 
     <div class="visitor-counter">
         <div class="counter-icon">👥</div>
@@ -316,5 +351,6 @@
     </div>
 
     <script src="script.js"></script>
+    <script src="chatbot.js"></script>
 </body>
 </html>

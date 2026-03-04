@@ -12,11 +12,37 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Background music control
+// Background music control with playlist
+const playlist = [
+    'music/Maher Zain & Harris J - Qalbi Fil Madinah  Official Music Video  قلبي في المدينة - Awakening Music.mp3',
+    'music/Maher Zain - Ramadan (Malay_Bahasa Version)  Official Music Video - Maher Zain.mp3'
+];
+let currentTrack = 0;
+
 const bgMusic = document.getElementById('bgMusic');
 const musicToggle = document.getElementById('musicToggle');
 const musicIcon = document.querySelector('.music-icon');
 let musicPlaying = false;
+
+// Function to load track
+function loadTrack(index) {
+    bgMusic.src = playlist[index];
+    bgMusic.load();
+}
+
+// Function to play next track
+function playNextTrack() {
+    currentTrack = (currentTrack + 1) % playlist.length;
+    loadTrack(currentTrack);
+    if (musicPlaying) {
+        bgMusic.play().catch(e => console.log('Audio play failed:', e));
+    }
+}
+
+// Auto play next track when current ends
+bgMusic.addEventListener('ended', () => {
+    playNextTrack();
+});
 
 // Toggle music on button click
 musicToggle.addEventListener('click', () => {
