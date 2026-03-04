@@ -3,376 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Welcome - Portfolio</title>
+    <link rel="stylesheet" href="welcome.css">
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="logo">YP</div>
-        <div class="hero-content">
-            <div class="profile-image">
-                <img src="images/WhatsApp Image 2026-02-27 at 7.53.58 PM.jpeg" alt="Profile">
+    <div class="welcome-container">
+        <div class="welcome-card">
+            <div class="welcome-header">
+                <h1>🌙 Assalamualaikum 🌙</h1>
+                <p>Selamat datang di Portfolio Muhammad Fikri Arsyad</p>
             </div>
-            <div class="hero-text">
-                <h1>PORTFOLIO</h1>
-                <p class="subtitle">■ CALON INVESTOR</p>
-                <nav class="hero-nav">
-                    <a href="#start">START</a>
-                    <a href="#books">BOOKS</a>
-                    <a href="#projects">PROJECTS</a>
-                    <a href="#photos">PHOTOS</a>
-                    <a href="#videos">VIDEOS</a>
-                    <a href="#contact">CONTACT</a>
-                    <a href="#exit">EXIT</a>
-                </nav>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="start" class="about">
-        <div class="container">
-            <nav class="section-nav">
-                <a href="#start" class="active">START</a>
-                <a href="#books">BOOKS</a>
-                <a href="#projects">PROJECTS</a>
-                <a href="#photos">PHOTOS</a>
-                <a href="#videos">VIDEOS</a>
-                <a href="#contact">CONTACT PERSON</a>
-            </nav>
             
-            <div class="about-content">
-                <div class="profile-photo">
-                    <img src="images/WhatsApp Image 2026-02-25 at 3.57.22 PM.jpeg" alt="Profile Full">
+            <form id="guestForm" class="guest-form">
+                <div class="form-group">
+                    <label for="userType">Masuk Sebagai *</label>
+                    <select id="userType" name="userType" required>
+                        <option value="">Pilih...</option>
+                        <option value="tamu">Tamu</option>
+                        <option value="developer">Developer</option>
+                    </select>
                 </div>
-                
-                <div class="about-info">
-                    <h2>HELLO I AM<br><span class="name">MUHAMMAD FIKRI ARSYAD</span></h2>
-                    
-                    <div class="about-text">
-                        <h3>ABOUT ME</h3>
-                        <p>Nama saya Fikri, usia 21 tahun. Saya memiliki visi besar untuk menjadi seorang triliuner bukan sebagai pewaris, melainkan sebagai perintis yang membangun semuanya dari nol. Saya percaya kesuksesan lahir dari proses, kerja keras, disiplin, dan keberanian mengambil risiko dalam setiap peluang yang ada.</p>
-                        <p>Saya memiliki minat kuat di dunia saham dan teknologi informasi, khususnya Artificial Intelligence (AI) yang saya yakini sebagai masa depan dengan peluang besar. Saya aktif belajar IT dan trading saham untuk melatih kemampuan analisis serta manajemen risiko. Di luar itu, saya juga rutin berolahraga untuk menjaga konsistensi dan kesehatan. Bagi saya, tujuan hidup bukan hanya menjadi kaya secara finansial, tetapi juga menjadi pribadi yang bermanfaat dan memberi dampak positif bagi banyak orang.</p>
+
+                <div id="guestFields">
+                    <div class="form-group">
+                        <label for="guestName">Nama Lengkap *</label>
+                        <input type="text" id="guestName" name="name" placeholder="Masukkan nama Anda">
                     </div>
                     
-                    <div class="skills">
-                        <h3>SOFTWARE SKILLS</h3>
-                        <div class="skill-icons">
-                            <div class="skill-icon-wrapper">
-                                <img src="images/icons/figma.svg" alt="Figma">
-                                <span class="tooltip">Figma</span>
-                            </div>
-                            <div class="skill-icon-wrapper">
-                                <img src="images/icons/kiro.svg" alt="Kiro">
-                                <span class="tooltip">Kiro</span>
-                            </div>
-                            <div class="skill-icon-wrapper">
-                                <img src="images/icons/canva.svg" alt="Canva">
-                                <span class="tooltip">Canva</span>
-                            </div>
-                            <div class="skill-icon-wrapper">
-                                <img src="images/icons/capcut.svg" alt="CapCut">
-                                <span class="tooltip">CapCut</span>
-                            </div>
-                            <div class="skill-icon-wrapper">
-                                <img src="images/icons/aftereffects.svg" alt="After Effects">
-                                <span class="tooltip">After Effects</span>
-                            </div>
-                            <div class="skill-icon-wrapper">
-                                <img src="images/icons/chatgpt.svg" alt="ChatGPT">
-                                <span class="tooltip">ChatGPT</span>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="guestCity">Asal Kota *</label>
+                        <input type="text" id="guestCity" name="city" placeholder="Contoh: Malang">
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Books Section -->
-    <section id="books" class="books">
-        <div class="container">
-            <nav class="section-nav">
-                <a href="#start">START</a>
-                <a href="#books" class="active">BOOKS</a>
-                <a href="#projects">PROJECTS</a>
-                <a href="#photos">PHOTOS</a>
-                <a href="#videos">VIDEOS</a>
-                <a href="#contact">CONTACT PERSON</a>
-            </nav>
-            
-            <h2>BUKU YANG DIBACA</h2>
-            
-            <div class="books-grid">
-                <div class="book-item">
-                    <div class="book-cover">
-                        <img src="images/books/ChatGPT Image Feb 27, 2026, 04_33_53 PM.png" alt="Warren Buffett Mindset">
-                    </div>
-                    <div class="book-info">
-                        <h3>Warren Buffett Mindset</h3>
-                        <p class="author">Investment Philosophy</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <nav class="section-nav">
-                <a href="#start">START</a>
-                <a href="#books">BOOKS</a>
-                <a href="#projects" class="active">PROJECTS</a>
-                <a href="#photos">PHOTOS</a>
-                <a href="#videos">VIDEOS</a>
-                <a href="#contact">CONTACT PERSON</a>
-            </nav>
-            
-            <h2>RECAP PROJECT <span class="badge">NO AI</span></h2>
-            
-            <div class="project-grid">
-                <a href="https://www.figma.com/design/NAsuvl7dLur5cza6JDHfwe/Untitled?t=COKuys8kRSoVLUxY-0" target="_blank" class="project-item">
-                    <img src="images/projects/ChatGPT Image Feb 27, 2026, 04_43_39 PM.png" alt="Project 1">
-                </a>
-                <a href="https://treding-eta.vercel.app/" target="_blank" class="project-item">
-                    <img src="images/projects/Screenshot 2026-03-04 091048.png" alt="Project Trading">
-                </a>
-                <a href="https://jual-buhan-dan-sayur.vercel.app/" target="_blank" class="project-item">
-                    <img src="images/projects/Screenshot 2026-02-27 170414.png" alt="Project Sayur">
-                </a>
-                <a href="https://www.figma.com/design/VsgRZwNJTGgGJ8yOoj3rnh/Untitled?t=COKuys8kRSoVLUxY-0" target="_blank" class="project-item">
-                    <img src="images/projects/Cryptocurrency app interface on iPhones.png" alt="Project Crypto">
-                </a>
-                <a href="https://tugaso.vercel.app/" target="_blank" class="project-item">
-                    <img src="images/projects/Screenshot 2026-03-04 095657.png" alt="Project Tugas">
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Photos Section -->
-    <section id="photos" class="photos">
-        <div class="container">
-            <nav class="section-nav">
-                <a href="#start">START</a>
-                <a href="#books">BOOKS</a>
-                <a href="#projects">PROJECTS</a>
-                <a href="#photos" class="active">PHOTOS</a>
-                <a href="#videos">VIDEOS</a>
-                <a href="#contact">CONTACT PERSON</a>
-            </nav>
-            
-            <h2>FOTO KENANGAN</h2>
-            
-            <div class="photos-grid">
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.53.54 PM (1).jpeg" alt="Photo 1">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.53.54 PM.jpeg" alt="Photo 2">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.53.55 PM.jpeg" alt="Photo 3">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.53.57 PM (1).jpeg" alt="Photo 4">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.53.57 PM.jpeg" alt="Photo 5">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.53.58 PM (1).jpeg" alt="Photo 6">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.53.59 PM.jpeg" alt="Photo 7">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.54.00 PM.jpeg" alt="Photo 8">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.54.01 PM.jpeg" alt="Photo 9">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-27 at 7.54.02 PM.jpeg" alt="Photo 10">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-28 at 10.33.37 PM.jpeg" alt="Photo 11">
-                </div>
-                <div class="photo-item">
-                    <img src="images/photos/WhatsApp Image 2026-02-28 at 11.09.58 PM.jpeg" alt="Photo 12">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Videos Section -->
-    <section id="videos" class="videos">
-        <div class="container">
-            <nav class="section-nav">
-                <a href="#start">START</a>
-                <a href="#books">BOOKS</a>
-                <a href="#projects">PROJECTS</a>
-                <a href="#photos">PHOTOS</a>
-                <a href="#videos" class="active">VIDEOS</a>
-                <a href="#contact">CONTACT PERSON</a>
-            </nav>
-            
-            <h2>VIDEO KENANGAN</h2>
-            
-            <div class="videos-grid">
-                <div class="video-item video-placeholder">
-                    <div class="video-empty">
-                        <span class="video-icon">🎬</span>
-                        <p>Video 1</p>
-                        <small>Coming Soon</small>
-                    </div>
-                </div>
-                <div class="video-item video-placeholder">
-                    <div class="video-empty">
-                        <span class="video-icon">🎬</span>
-                        <p>Video 2</p>
-                        <small>Coming Soon</small>
-                    </div>
-                </div>
-                <div class="video-item video-placeholder">
-                    <div class="video-empty">
-                        <span class="video-icon">🎬</span>
-                        <p>Video 3</p>
-                        <small>Coming Soon</small>
-                    </div>
-                </div>
-                <div class="video-item video-placeholder">
-                    <div class="video-empty">
-                        <span class="video-icon">🎬</span>
-                        <p>Video 4</p>
-                        <small>Coming Soon</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <nav class="section-nav">
-                <a href="#start">START</a>
-                <a href="#books">BOOKS</a>
-                <a href="#projects">PROJECTS</a>
-                <a href="#photos">PHOTOS</a>
-                <a href="#videos">VIDEOS</a>
-                <a href="#contact" class="active">CONTACT PERSON</a>
-            </nav>
-            
-            <div class="contact-content">
-                <div class="contact-left">
-                    <div class="contact-photo">
-                        <img src="images/WhatsApp Image 2026-02-27 at 7.53.58 PM.jpeg" alt="Contact">
+                <div id="developerFields" style="display: none;">
+                    <div class="form-group">
+                        <label for="devName">Nama Developer *</label>
+                        <input type="text" id="devName" name="devName" placeholder="Masukkan nama Anda">
                     </div>
                     
-                    <h3>CONTACT ME</h3>
-                    <div class="social-links">
-                        <a href="https://www.instagram.com/fikri_arsyad2004/" target="_blank" class="social-item">
-                            <span class="icon">📷</span>
-                            <span>INSTAGRAM - fikri_arsyad2004</span>
-                        </a>
-                        <a href="https://www.tiktok.com/@arsyadchannel6" target="_blank" class="social-item">
-                            <span class="icon">📱</span>
-                            <span>TIKTOK - arsyadchannel6</span>
-                        </a>
-                        <a href="https://wa.me/6282005479994" target="_blank" class="social-item">
-                            <span class="icon">💬</span>
-                            <span>WHATSAPP - 0882005479994</span>
-                        </a>
-                        <a href="https://www.facebook.com/profile.php?id=61560272645679&locale=id_ID" target="_blank" class="social-item">
-                            <span class="icon">👤</span>
-                            <span>FACEBOOK - Muhammad Fikri Arsyad</span>
-                        </a>
+                    <div class="form-group">
+                        <label for="devPassword">Password *</label>
+                        <input type="password" id="devPassword" name="password" placeholder="Password: 1-8">
                     </div>
                 </div>
                 
-                <div class="contact-right">
-                    <div class="quote-section">
-                        <p class="quote-text">"Kesuksesan tidak dilihat berapa uang mu, berapa aset mu, tapi kesuksesan itu dilihat ketika dia bermanfaat bagi orang lain"</p>
-                    </div>
-                    <div class="thank-you-text">
-                        <h2>TERIMA KASIH</h2>
-                    </div>
-                </div>
+                <button type="submit" class="submit-btn">
+                    <span>Masuk Portfolio</span>
+                    <span class="arrow">→</span>
+                </button>
+            </form>
+            
+            <div class="visitor-info">
+                <p>📊 Total Pengunjung: <span id="totalVisitors">0</span></p>
             </div>
         </div>
-    </section>
-
-    <audio id="bgMusic">
-        <source src="music/Maher Zain & Harris J - Qalbi Fil Madinah  Official Music Video  قلبي في المدينة - Awakening Music.mp3" type="audio/mpeg">
-    </audio>
-
-    <button id="musicToggle" class="music-toggle">
-        <span class="music-icon">🔊</span>
-    </button>
-
-    <button id="chatToggle" class="chat-toggle">
-        <span class="chat-icon">💬</span>
-    </button>
-
-    <div id="chatContainer" class="chat-container">
-        <div class="chat-header">
-            <div class="chat-header-info">
-                <span class="chat-avatar">🤖</span>
-                <div>
-                    <div class="chat-title">AI Assistant</div>
-                    <div class="chat-status">Online</div>
-                </div>
-            </div>
-            <button id="chatClose" class="chat-close">✕</button>
-        </div>
-        <div id="chatMessages" class="chat-messages"></div>
-        <div class="chat-input-container">
-            <textarea id="chatInput" class="chat-input" placeholder="Tanya tentang Fikri..." rows="1"></textarea>
-            <button id="chatSend" class="chat-send">
-                <span>➤</span>
-            </button>
+        
+        <div class="decoration-welcome">
+            <div class="moon-welcome">🌙</div>
+            <div class="star-welcome">⭐</div>
+            <div class="star-welcome">⭐</div>
+            <div class="lantern-welcome">🏮</div>
         </div>
     </div>
-
-    <div class="ramadan-decoration">🌙✨</div>
-    <div class="ramadan-greeting">☪️ Ramadan Mubarak ☪️</div>
     
-    <div class="stars-container">
-        <div class="star">⭐</div>
-        <div class="star">⭐</div>
-        <div class="star">⭐</div>
-        <div class="star">⭐</div>
-        <div class="star">⭐</div>
-    </div>
-
-    <div class="ramadan-moons">
-        <div class="moon">🌙</div>
-        <div class="moon">🌙</div>
-        <div class="moon">🌙</div>
-        <div class="moon">🌙</div>
-    </div>
-
-    <div class="ramadan-lanterns">
-        <div class="lantern">🏮</div>
-        <div class="lantern">🏮</div>
-        <div class="lantern">🏮</div>
-        <div class="lantern">🏮</div>
-        <div class="lantern">🏮</div>
-        <div class="lantern">🏮</div>
-    </div>
-
-    <div class="visitor-counter">
-        <div class="counter-icon">👥</div>
-        <div class="counter-info">
-            <span class="counter-label">Visitors</span>
-            <span class="counter-number" id="visitorCount">0</span>
-        </div>
-    </div>
-
-    <script src="script.js"></script>
-    <script src="chatbot.js"></script>
+    <script src="welcome.js"></script>
 </body>
 </html>

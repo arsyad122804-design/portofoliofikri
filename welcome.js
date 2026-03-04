@@ -66,7 +66,7 @@ function checkSession() {
     const currentGuest = sessionStorage.getItem('currentGuest');
     if (currentGuest) {
         // Already filled form, redirect to portfolio
-        window.location.href = 'index.html';
+        window.location.href = 'portfolio.html';
     }
 }
 
