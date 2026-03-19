@@ -6,61 +6,108 @@
 
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #000 0%, #1a0000 50%, #000 100%);
+    background: linear-gradient(135deg, #0a1a0a 0%, #0d2b0d 30%, #1a3a1a 60%, #0a1a0a 100%);
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     color: #fff;
     overflow: hidden;
     position: relative;
 }
 
+/* ===== BANNER IDUL FITRI ===== */
+.idul-fitri-banner {
+    background: linear-gradient(135deg, #c8a400, #ffd700, #c8a400);
+    color: #1a0a00;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5);
+    animation: bannerPulse 2s ease-in-out infinite;
+    z-index: 10;
+    position: relative;
+}
+
+.banner-icon {
+    font-size: 20px;
+}
+
+@keyframes bannerPulse {
+    0%, 100% { box-shadow: 0 4px 20px rgba(255, 215, 0, 0.5); }
+    50% { box-shadow: 0 4px 40px rgba(255, 215, 0, 0.9); }
+}
+
+/* ===== CONTAINER ===== */
 .welcome-container {
     width: 100%;
     max-width: 500px;
     padding: 20px;
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* ===== CARD ===== */
 .welcome-card {
-    background: rgba(20, 20, 20, 0.95);
+    background: rgba(10, 30, 10, 0.95);
     border-radius: 20px;
     padding: 40px;
-    box-shadow: 0 20px 60px rgba(220, 20, 60, 0.4);
-    border: 2px solid rgba(220, 20, 60, 0.3);
+    box-shadow: 0 20px 60px rgba(0, 180, 0, 0.3), 0 0 0 1px rgba(255, 215, 0, 0.2);
+    border: 2px solid rgba(255, 215, 0, 0.4);
     animation: slideIn 0.6s ease-out;
+    width: 100%;
 }
 
 @keyframes slideIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
+/* ===== HEADER ===== */
 .welcome-header {
     text-align: center;
     margin-bottom: 30px;
 }
 
-.welcome-header h1 {
-    font-size: 32px;
+.header-emoji {
+    font-size: 60px;
     margin-bottom: 10px;
-    color: #dc143c;
-    text-shadow: 0 0 20px rgba(220, 20, 60, 0.6);
+    animation: float 3s ease-in-out infinite;
+    display: block;
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.6));
+}
+
+.welcome-header h1 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    color: #ffd700;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.7);
+    font-weight: 800;
+}
+
+.welcome-header h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    color: #90ee90;
+    text-shadow: 0 0 10px rgba(144, 238, 144, 0.5);
+    font-weight: 600;
 }
 
 .welcome-header p {
-    font-size: 16px;
-    color: #ccc;
+    font-size: 14px;
+    color: #aaa;
 }
 
+/* ===== FORM ===== */
 .guest-form {
     display: flex;
     flex-direction: column;
@@ -75,7 +122,7 @@ body {
 
 .form-group label {
     font-size: 14px;
-    color: #dc143c;
+    color: #ffd700;
     font-weight: 600;
 }
 
@@ -83,45 +130,52 @@ body {
 .form-group select {
     padding: 12px 15px;
     background: rgba(255, 255, 255, 0.05);
-    border: 2px solid rgba(220, 20, 60, 0.3);
+    border: 2px solid rgba(255, 215, 0, 0.3);
     border-radius: 10px;
     color: #fff;
     font-size: 14px;
     transition: all 0.3s;
 }
 
+.form-group select option {
+    background: #0d2b0d;
+    color: #fff;
+}
+
 .form-group input:focus,
 .form-group select:focus {
     outline: none;
-    border-color: #dc143c;
-    box-shadow: 0 0 15px rgba(220, 20, 60, 0.4);
+    border-color: #ffd700;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
 }
 
 .form-group input::placeholder {
-    color: #666;
+    color: #555;
 }
 
+/* ===== BUTTON ===== */
 .submit-btn {
     margin-top: 10px;
     padding: 15px 30px;
-    background: linear-gradient(135deg, #dc143c, #ff1744);
-    border: none;
+    background: linear-gradient(135deg, #2d7a2d, #4caf50, #2d7a2d);
+    border: 2px solid rgba(255, 215, 0, 0.4);
     border-radius: 10px;
     color: white;
     font-size: 16px;
-    font-weight: 600;
+    font-weight: 700;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     transition: all 0.3s;
-    box-shadow: 0 5px 20px rgba(220, 20, 60, 0.4);
+    box-shadow: 0 5px 20px rgba(76, 175, 80, 0.4);
 }
 
 .submit-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 30px rgba(220, 20, 60, 0.6);
+    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.6), 0 0 20px rgba(255, 215, 0, 0.3);
+    background: linear-gradient(135deg, #3d8a3d, #5cbf60, #3d8a3d);
 }
 
 .submit-btn .arrow {
@@ -133,21 +187,44 @@ body {
     transform: translateX(5px);
 }
 
+/* ===== VISITOR INFO ===== */
 .visitor-info {
     margin-top: 20px;
     text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid rgba(220, 20, 60, 0.3);
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
     color: #888;
     font-size: 14px;
 }
 
 .visitor-info span {
-    color: #dc143c;
+    color: #ffd700;
     font-weight: bold;
 }
 
-/* Decorations */
+/* ===== LEBARAN FOOTER ===== */
+.lebaran-footer {
+    margin-top: 15px;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.lebaran-footer p:first-child {
+    font-size: 16px;
+    color: #ffd700;
+    font-weight: 600;
+    text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+}
+
+.footer-translate {
+    font-size: 12px;
+    color: #90ee90;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+/* ===== DEKORASI ===== */
 .decoration-welcome {
     position: fixed;
     top: 0;
@@ -158,82 +235,104 @@ body {
     z-index: 1;
 }
 
-.moon-welcome {
+.ketupat {
     position: absolute;
-    top: 10%;
-    right: 15%;
-    font-size: 60px;
-    animation: float 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.8));
+    font-size: 50px;
+    animation: float 5s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.5));
 }
 
-.star-welcome {
+.k1 { top: 8%; left: 5%; animation-delay: 0s; }
+.k2 { bottom: 10%; right: 5%; animation-delay: 1.5s; }
+
+.bunga {
     position: absolute;
-    font-size: 30px;
-    animation: twinkle 3s ease-in-out infinite;
+    font-size: 35px;
+    animation: twinkle 4s ease-in-out infinite;
 }
 
-.star-welcome:nth-child(2) {
-    top: 20%;
-    left: 10%;
-    animation-delay: 0.5s;
-}
+.b1 { top: 15%; right: 8%; animation-delay: 0.5s; }
+.b2 { bottom: 25%; left: 8%; animation-delay: 1s; }
+.b3 { top: 50%; right: 3%; animation-delay: 2s; }
 
-.star-welcome:nth-child(3) {
-    bottom: 20%;
-    right: 10%;
-    animation-delay: 1s;
-}
-
-.lantern-welcome {
+.bintang {
     position: absolute;
-    top: 5%;
-    left: 20%;
-    font-size: 40px;
-    animation: swing 3s ease-in-out infinite;
-    filter: drop-shadow(0 0 15px rgba(255, 100, 100, 0.6));
+    font-size: 25px;
+    animation: twinkle 2.5s ease-in-out infinite;
 }
 
+.s1 { top: 5%; left: 30%; animation-delay: 0s; }
+.s2 { top: 5%; right: 30%; animation-delay: 0.7s; }
+.s3 { bottom: 5%; left: 20%; animation-delay: 1.2s; }
+.s4 { bottom: 5%; right: 20%; animation-delay: 1.8s; }
+
+.masjid {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 80px;
+    opacity: 0.15;
+    filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+}
+
+/* ===== PARTIKEL EMAS ===== */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: #ffd700;
+    border-radius: 50%;
+    animation: particleFall linear infinite;
+    opacity: 0;
+}
+
+@keyframes particleFall {
+    0% { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+}
+
+/* ===== ANIMASI ===== */
 @keyframes float {
-    0%, 100% {
-        transform: translateY(0) rotate(0deg);
-    }
-    50% {
-        transform: translateY(-20px) rotate(10deg);
-    }
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
 }
 
 @keyframes twinkle {
-    0%, 100% {
-        opacity: 0.3;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 1;
-        transform: scale(1.3);
-    }
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
 }
 
-@keyframes swing {
-    0%, 100% {
-        transform: rotate(-5deg);
-    }
-    50% {
-        transform: rotate(5deg);
-    }
-}
-
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
     .welcome-card {
-        padding: 30px 20px;
+        padding: 25px 18px;
     }
-    
+
     .welcome-header h1 {
-        font-size: 24px;
+        font-size: 22px;
     }
-    
-    .moon-welcome {
-        font-size: 40px;
+
+    .welcome-header h2 {
+        font-size: 15px;
+    }
+
+    .idul-fitri-banner {
+        font-size: 13px;
+        padding: 8px 20px;
+    }
+
+    .header-emoji {
+        font-size: 45px;
     }
 }

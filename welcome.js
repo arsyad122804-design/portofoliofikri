@@ -129,6 +129,22 @@ document.getElementById('guestForm').addEventListener('submit', function(e) {
     }
 });
 
+// Partikel emas Lebaran
+function createParticles() {
+    const container = document.getElementById('particles');
+    if (!container) return;
+    for (let i = 0; i < 20; i++) {
+        const p = document.createElement('div');
+        p.className = 'particle';
+        p.style.left = Math.random() * 100 + '%';
+        p.style.animationDuration = (Math.random() * 5 + 4) + 's';
+        p.style.animationDelay = (Math.random() * 5) + 's';
+        p.style.width = p.style.height = (Math.random() * 4 + 2) + 'px';
+        container.appendChild(p);
+    }
+}
+
 // Initialize
 checkSession();
 loadVisitorCount();
+createParticles();

@@ -7,10 +7,36 @@
     <link rel="stylesheet" href="welcome.css">
 </head>
 <body>
+    <!-- Dekorasi Lebaran -->
+    <div class="decoration-welcome">
+        <div class="ketupat k1">🎋</div>
+        <div class="ketupat k2">🎋</div>
+        <div class="bunga b1">🌸</div>
+        <div class="bunga b2">🌸</div>
+        <div class="bunga b3">🌼</div>
+        <div class="bintang s1">✨</div>
+        <div class="bintang s2">✨</div>
+        <div class="bintang s3">✨</div>
+        <div class="bintang s4">✨</div>
+        <div class="masjid">🕌</div>
+    </div>
+
+    <!-- Partikel emas -->
+    <div class="particles" id="particles"></div>
+
     <div class="welcome-container">
+        <!-- Banner Idul Fitri -->
+        <div class="idul-fitri-banner">
+            <span class="banner-icon">🌙</span>
+            <span class="banner-text">Selamat Idul Fitri 1446 H</span>
+            <span class="banner-icon">⭐</span>
+        </div>
+
         <div class="welcome-card">
             <div class="welcome-header">
-                <h1>🌙 Assalamualaikum 🌙</h1>
+                <div class="header-emoji">🕌</div>
+                <h1>Selamat Idul Fitri</h1>
+                <h2>Mohon Maaf Lahir & Batin</h2>
                 <p>Selamat datang di Portfolio Muhammad Fikri Arsyad</p>
             </div>
             
@@ -32,7 +58,42 @@
                     
                     <div class="form-group">
                         <label for="guestCity">Asal Kota *</label>
-                        <input type="text" id="guestCity" name="city" placeholder="Contoh: Malang">
+                        <select id="guestCity" name="city">
+                            <option value="">Pilih Kota...</option>
+                            <option value="Malang">Malang</option>
+                            <option value="Surabaya">Surabaya</option>
+                            <option value="Jakarta">Jakarta</option>
+                            <option value="Bandung">Bandung</option>
+                            <option value="Yogyakarta">Yogyakarta</option>
+                            <option value="Semarang">Semarang</option>
+                            <option value="Medan">Medan</option>
+                            <option value="Makassar">Makassar</option>
+                            <option value="Palembang">Palembang</option>
+                            <option value="Balikpapan">Balikpapan</option>
+                            <option value="Samarinda">Samarinda</option>
+                            <option value="Banjarmasin">Banjarmasin</option>
+                            <option value="Pontianak">Pontianak</option>
+                            <option value="Denpasar">Denpasar</option>
+                            <option value="Mataram">Mataram</option>
+                            <option value="Kupang">Kupang</option>
+                            <option value="Manado">Manado</option>
+                            <option value="Palu">Palu</option>
+                            <option value="Kendari">Kendari</option>
+                            <option value="Ambon">Ambon</option>
+                            <option value="Jayapura">Jayapura</option>
+                            <option value="Padang">Padang</option>
+                            <option value="Pekanbaru">Pekanbaru</option>
+                            <option value="Batam">Batam</option>
+                            <option value="Jambi">Jambi</option>
+                            <option value="Bengkulu">Bengkulu</option>
+                            <option value="Lampung">Lampung</option>
+                            <option value="Serang">Serang</option>
+                            <option value="Bogor">Bogor</option>
+                            <option value="Depok">Depok</option>
+                            <option value="Bekasi">Bekasi</option>
+                            <option value="Tangerang">Tangerang</option>
+                            <option value="Lainnya">Lainnya</option>
+                        </select>
                     </div>
                 </div>
 
@@ -44,7 +105,7 @@
                     
                     <div class="form-group">
                         <label for="devPassword">Password *</label>
-                        <input type="password" id="devPassword" name="password" placeholder="Password: 1-8">
+                        <input type="password" id="devPassword" name="password" placeholder="Masukkan password">
                     </div>
                 </div>
                 
@@ -57,13 +118,11 @@
             <div class="visitor-info">
                 <p>📊 Total Pengunjung: <span id="totalVisitors">0</span></p>
             </div>
-        </div>
-        
-        <div class="decoration-welcome">
-            <div class="moon-welcome">🌙</div>
-            <div class="star-welcome">⭐</div>
-            <div class="star-welcome">⭐</div>
-            <div class="lantern-welcome">🏮</div>
+
+            <div class="lebaran-footer">
+                <p>تَقَبَّلَ اللهُ مِنَّا وَمِنْكُمْ</p>
+                <p class="footer-translate">Taqabbalallahu minna wa minkum</p>
+            </div>
         </div>
     </div>
     
